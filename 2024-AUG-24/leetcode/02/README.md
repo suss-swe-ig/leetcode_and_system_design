@@ -1,3 +1,4 @@
+```
 --- Day 9: Rope Bridge ---
 
 This rope bridge creaks as you walk along it. You aren't sure how old it is, or whether it can even support your weight.
@@ -677,3 +678,5 @@ Simulate your complete series of motions on a larger rope with ten knots. How ma
 Your puzzle answer was 2724.
 
 Both parts of this puzzle are complete! They provide two gold stars: **
+
+```
