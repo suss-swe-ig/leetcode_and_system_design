@@ -1,5 +1,4 @@
-```
---- Day 2: Rock Paper Scissors ---
+# Day 2: Rock Paper Scissors
 
 The Elves begin to set up camp on the beach. To decide whose tent gets to be closest to the snack storage, a giant  
 Rock Paper Scissors tournament is already in progress.
@@ -26,9 +25,11 @@ if you were to follow the strategy guide.
 
 For example, suppose you were given the following strategy guide:
 
+```
 A Y
 B X
 C Z 
+```
 
 This strategy guide predicts and recommends the following:
 
@@ -46,7 +47,7 @@ What would your total score be if everything goes exactly according to your stra
 
 Your puzzle answer was 13005.
 
---- Part Two ---
+## Part Two
 
 The Elf finishes helping with the tent and sneaks back over to you. "Anyway, the second column says how the round 
 needs to end: X means you need to lose, Y means you need to end the round in a draw, and Z means you need to win. 
@@ -69,4 +70,3 @@ Following the Elf's instructions for the second column, what would your total sc
 according to your strategy guide?
 
 Your puzzle answer was 11373.
-```
