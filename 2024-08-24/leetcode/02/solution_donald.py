@@ -21,12 +21,12 @@ class Coords:
     def coords(self) -> Tuple[int, int]:
         return self._x, self._y
 
-    def move(self, unit: "Coords") -> Tuple[int, int]:
+    def move(self, unit: "Coords") -> None:
         dx, dy = unit.coords
         self._x += dx 
         self._y += dy 
         self._history.add((self._x, self._y))
-        return self._x, self._y
+        
     
     @property
     def history(self) ->Set[Tuple[int, int]]:
