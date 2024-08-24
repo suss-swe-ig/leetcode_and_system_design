@@ -40,7 +40,7 @@ def part1():
         for line in f:
             # read A,B,C,X,Y,Z from input.txt
             other, me = line.strip().split(" ")
-            # convert A,B,C,X,Y,Z tto rock,paper,scissors,rock,paper,scissors respectively
+            # convert A,B,C,X,Y,Z to rock,paper,scissors,rock,paper,scissors respectively
             other, me = rps[other], rps[me]
             # compute the score
             score += points[outcome[me][other]] + points[me]
@@ -83,7 +83,9 @@ def part2():
     score = 0
     with open("input.txt") as f:
         for line in f:
+            # read A,B,C,X,Y,Z from input.txt
             other, me = line.strip().split(" ")
+            # convert A,B,C,X,Y,Z to rock,paper,scissors,lose,draw,win respectively
             other, intent = rps[other], intentions[me]
             score += points[intentions[intent][other]] + points[intent]
     print(score)
