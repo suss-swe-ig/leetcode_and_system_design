@@ -6,10 +6,6 @@ def part1():
     points["win"] = 6
     points["draw"] = 3
     points["lose"] = 0
-    beat = {}
-    beat["rock"] = "paper"
-    beat["paper"] = "scissors"
-    beat["scissors"] = "rock"
     rps = {}
     rps["A"] = "rock"
     rps["B"] = "paper"
@@ -17,17 +13,28 @@ def part1():
     rps["X"] = "rock"
     rps["Y"] = "paper"
     rps["Z"] = "scissors"
+    outcome = {}
+    outcome["rock"] = {}
+    outcome["rock"]["rock"] = "draw"
+    outcome["rock"]["paper"] = "lose"
+    outcome["rock"]["scissors"] = "win"
+    outcome["paper"] = {}
+    outcome["paper"]["rock"] = "win"
+    outcome["paper"]["paper"] = "draw"
+    outcome["paper"]["scissors"] = "lose"
+    outcome["scissors"] = {}
+    outcome["scissors"]["rock"] = "lose"
+    outcome["scissors"]["paper"] = "win"
+    outcome["scissors"]["scissors"] = "draw"
     score = 0
     with open("input.txt") as f:
         for line in f:
+            # read A,B,C,X,Y,Z from input.txt
             other, me = line.strip().split(" ")
+            # convert A,B,C,X,Y,Z tto rock,paper,scissors,rock,paper,scissors respectively
             other, me = rps[other], rps[me]
-            if other == beat[me]:
-                score += points["lose"] + points[me]
-            elif me == beat[other]:
-                score += points["win"] + points[me]
-            else:
-                score += points["draw"] + points[me]
+            # compute the score
+            score += points[outcome[me][other]] + points[me]
     print(score)
 
 def part2():
@@ -71,4 +78,5 @@ def part2():
 
 part1()
 part2()
+
 
