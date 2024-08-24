@@ -1,4 +1,13 @@
+"""
+Solution by Donaldson Tan (@geodome)
+
+If you are unsure of this solution, reach out to me via Telegram. I will explain to you.
+"""
+
 def part1():
+    """
+    The idea here is you can perform branching by using hash map keys to replace the if-constructs.
+    """
     points = {}
     points["rock"] = 1
     points["paper"] = 2
@@ -38,6 +47,9 @@ def part1():
     print(score)
 
 def part2():
+    """
+    The same solution technique is employed - using hash maps to perform branch without involving the if-construct.
+    """
     rps = {}
     rps["A"] = "rock"
     rps["B"] = "paper"
