@@ -65,37 +65,50 @@ def simulate(moves: List[Tuple[str, int]], rope: List["Coords"]) -> Set[Tuple[in
         "DR": Coords( 1, -1),
     }
     if len(rope) > 1:
+        # a rope consists of at least 2 parts - a head and a tail.
         head = rope[0]
         for dir, count in moves:
             while count > 0:
                 head.move(steps[dir])
                 prev = head
                 for tail in rope[1:]:
+                    # every time the head moves, update the position of each tail
                     if not prev.adjacent(tail):
+                        # if the tail is adjacent, tail position remains unchanged.
                         x0, y0 = prev.coords
                         x1, y1 = tail.coords
                         if x0 == x1:
                             # same col
                             if y0 > y1:
+                                # head is above tail
                                 tail.move(steps["U"])
                             else:
+                                # head is below tail
                                 tail.move(steps["D"])   
                         elif y0 == y1:
                             # same row
                             if x0 > x1:
+                                # head is on the right side of the tail
                                 tail.move(steps["R"])
                             else:
+                                # head is on the left side of thej tail
                                 tail.move(steps["L"])
                         else:
                             if x0 > x1:
+                                # head is on the right side of the tail
                                 if y0 > y1:
+                                    # head is above the tail
                                     tail.move(steps["UR"])
                                 else:
+                                    # head is below the tail
                                     tail.move(steps["DR"])
                             else:
+                                # head is on the left side of the tail
                                 if y0 > y1:
+                                    # head is above the tail
                                     tail.move(steps["UL"])
                                 else:
+                                    # head is below the tail
                                     tail.move(steps["DL"])
                     prev = tail
                 count -= 1
