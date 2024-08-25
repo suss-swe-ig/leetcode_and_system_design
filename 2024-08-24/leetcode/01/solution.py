@@ -54,10 +54,10 @@ def part2():
     rps["A"] = "rock"
     rps["B"] = "paper"
     rps["C"] = "scissors"
-    beat = {}
-    beat["scissors"] = "rock"
-    beat["paper"] = "scissors"
-    beat["rock"] = "paper"
+    win = {}
+    win["scissors"] = "rock"
+    win["paper"] = "scissors"
+    win["rock"] = "paper"
     lose = {}
     lose["rock"] = "scissors"
     lose["scissors"] = "paper"
@@ -70,7 +70,7 @@ def part2():
     intentions["X"] = "lose"
     intentions["Y"] = "draw"
     intentions["Z"] = "win"
-    intentions["win"] = beat
+    intentions["win"] = win
     intentions["lose"] = lose
     intentions["draw"] = draw
     points = {}
