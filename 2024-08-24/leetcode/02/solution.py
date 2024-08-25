@@ -73,8 +73,11 @@ def simulate(moves: List[Tuple[str, int]], rope: List["Coords"]) -> Set[Tuple[in
                 prev = head
                 for tail in rope[1:]:
                     # every time the head moves, update the position of each tail
-                    if not prev.adjacent(tail):
+                    if prev.adjacent(tail):
                         # if the tail is adjacent, tail position remains unchanged.
+                        break
+                    else:
+                        # update tail position 
                         x0, y0 = prev.coords
                         x1, y1 = tail.coords
                         if x0 == x1:
